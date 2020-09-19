@@ -16,6 +16,9 @@ from PyQt5.QtWidgets import QMainWindow, QApplication
 
 from threading import Timer
 
+from PIL import Image
+import requests
+from io import BytesIO
 ########################################################################################################################
 
 class MainWindow(QMainWindow):
@@ -42,6 +45,18 @@ def clearWindows():
     for i in range(4):
         windows[i].close()
 
+def loadImage(url, Finger):
+    response = requests.get(url)
+    image = np.asarray(bytearray(response.content), dtype="uint8")
+    image = cv2.imdecode(image, cv2.IMREAD_GRAYSCALE)
+
+    if (Finger == True):
+        image = cv2.resize(image,(320, 550))
+    else:
+        image = cv2.resize(image,(127,127))
+
+    return image
+
 ########################################################################################################################
 
 class Finerprint:
@@ -57,9 +72,10 @@ for i in range(4):
 
 for i in range(4):
     #make them binary so that it doesn't matter if it's selected
-    fingerprints[i].fingerImg = cv2.resize(cv2.imread(f"C:\\Users\\hazem\\Desktop\\GTA\\Finger{i+1}\\F{i+1}.jpg",cv2.IMREAD_GRAYSCALE),(320,550))
+    fingerprints[i].fingerImg = loadImage(f"https://github.com/HazemMohamed98/GTA-Online-Fingerprint/blob/GTA-Fingerprint-Images/F{i+1}.jpg?raw=true", True)
     for j in range(4):
-        fingerprints[i].fingerSol[j] = cv2.resize(cv2.imread(f"C:\\Users\\hazem\\Desktop\\GTA\\Finger{i+1}\\F{i+1}S{j+1}.jpg",cv2.IMREAD_GRAYSCALE),(127,127))
+        fingerprints[i].fingerSol[j] = loadImage(f"https://github.com/HazemMohamed98/GTA-Online-Fingerprint/blob/GTA-Fingerprint-Images/F{i+1}S{j+1}.jpg?raw=true", False)
+
 
 def takeScreenshot():
     screenshot = cv2.resize(cv2.cvtColor(np.array(pyautogui.screenshot()), cv2.COLOR_BGR2GRAY),(1920,1080))
