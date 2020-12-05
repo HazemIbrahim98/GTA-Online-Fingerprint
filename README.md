@@ -8,5 +8,5 @@ Some images are needed for the program to function and are downloaded from the o
 https://youtu.be/yDUvMIx5AnU
 
 # How to run?
-The easiest way to run is by downloading a python IDE (like pycharm) and downloading the required packages
+The easiest way to run is by downloading a python IDE (like pycharm) and downloading the required packages and run the script after opening the game
 -A better guide is WIP
