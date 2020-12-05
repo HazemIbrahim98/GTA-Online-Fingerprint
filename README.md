@@ -3,3 +3,6 @@ Automatically get a GUI that shows the correct solutions for the fingerprint min
 
 
 Some images are needed for the program to function and are downloaded from the other branch (for online hosting of the images) at the start of each run (for now).
+
+# Youtube Link
+https://youtu.be/yDUvMIx5AnU
