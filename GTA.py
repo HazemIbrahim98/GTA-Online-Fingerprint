@@ -1,4 +1,3 @@
-import io
 import sys
 from threading import Timer
 
@@ -15,9 +14,11 @@ import requests
 from PyQt5 import QtCore
 from PyQt5.QtWidgets import QMainWindow, QApplication
 
-
+from multiprocessing.dummy import Pool as ThreadPool
 ########################################################################################################################
 # GUI boxes that display over the game
+
+print('Starting :)')
 
 class boxWindow(QMainWindow):
     def __init__(self, x, y):
@@ -46,8 +47,7 @@ def clearWindows():
 ########################################################################################################################
 # Loading images needed for the program
 
-def loadImage(url, Finger):
-    response = requests.get(url)
+def loadImage(response, Finger):
     image = np.asarray(bytearray(response.content), dtype="uint8")
     image = cv2.imdecode(image, cv2.IMREAD_GRAYSCALE)
 
@@ -58,7 +58,18 @@ def loadImage(url, Finger):
 
     return image
 
-class Finerprint:
+def build_URL(f=0, s=None):
+    url = "https://raw.githubusercontent.com/HazemMohamed98/GTA-Online-Fingerprint/Images/"
+    insert = f'F{f}' + (f'S{s}' if s is not None else '')
+    return f'{url}{insert}.jpg'
+
+def fetch_all():
+    urls = [build_URL(i+1) for i in range(4)] + [build_URL(i+1,j+1) for i in range(4) for j in range(4)]
+    with ThreadPool(20) as pool:
+        responses = list(pool.map(requests.get, urls))
+    return responses
+
+class Fingerprint:
     def __init__(self):
         self.fingerImg = []
         self.fingerSol = [None] * 4
@@ -68,17 +79,19 @@ fingerprints = [None] * 4
 
 
 def initFingerprints():
+    # Acquire all URLs in parallel
+    print('Downloading Images')
+    responses = fetch_all()
     # Initialize the four fingerprints
+    ndx = 4
     for i in range(4):
-        fingerprints[i] = Finerprint()
+        fingerprints[i] = Fingerprint()
         fingerprints[i].fingersol = []
-
     for i in range(4):
-        print(f"Loading F{i}")
-        fingerprints[i].fingerImg = loadImage(f"https://raw.githubusercontent.com/HazemMohamed98/GTA-Online-Fingerprint/Images/F{i + 1}.jpg", True)
+        fingerprints[i].fingerImg = loadImage(responses[i], True)
         for j in range(4):
-            print(f"Loading F{i}S{j}")
-            fingerprints[i].fingerSol[j] = loadImage(f"https://raw.githubusercontent.com/HazemMohamed98/GTA-Online-Fingerprint/Images/F{i + 1}S{j + 1}.jpg", False)
+            fingerprints[i].fingerSol[j] = loadImage(responses[ndx], False)
+            ndx += 1
 
 ########################################################################################################################
 # The core
@@ -123,7 +136,7 @@ def solveScreenshot(FPtoSolve, screenshot, fingerprints):
 
 
 ########################################################################################################################
-# Hookng keyboard to get input
+# Hooking keyboard to get input
 
 # Running this prevents further stuff from executing
 def hookKeyboard():
@@ -138,47 +151,15 @@ def OnKeyboardEvent(event):
     if event.KeyID == 191:
         clearWindows()
         solveScreenshot(takeScreenshot()[0], takeScreenshot()[1], fingerprints)
+        print('Solving Screenshot')
 
     return True
-
 
 ########################################################################################################################
 # Main Stuff
 
 initFingerprints()
-print("Ready")
+print('Download complete!\nPress / to solve')
 hookKeyboard()
 
 ########################################################################################################################
-
-# Experemental
-
-# def mainWindow():
-#    app = QApplication(sys.argv)
-#    win = QMainWindow()
-#    win.setGeometry(960,540,300,300)
-#    win.setWindowTitle("GTA Fingerprint Solver")
-#
-#    label = QtWidgets.QLabel(win)
-#    label.setText("Load Images")
-#    label.move(50,50)
-#
-#    button = QPushButton(win)
-#    button.setText('Load images')
-#    button.move(50, 70)
-#    button.clicked.connect(initFingerprints)
-#
-#    win.show()
-#    sys.exit(app.exec_())
-
-#    def start():
-#        updateLabel()
-#        initFingerprints()
-#        hookKeyboard()
-
-
-#    def updateLabel():
-#        label.setText("Loading Images")
-#        button.setEnabled(False)
-
-# mainWindow()
