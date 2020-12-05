@@ -6,3 +6,7 @@ Some images are needed for the program to function and are downloaded from the o
 
 # Youtube Demonstration 
 https://youtu.be/yDUvMIx5AnU
+
+# How to run?
+The easiest way to run is by downloading a python IDE (like pycharm) and downloading the required packages
+-A better guide is WIP
