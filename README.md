@@ -1,7 +1,5 @@
 # GTA Online Fingerprint
-Automatically get a GUI that shows the correct solutions for the fingerprint minigame in the diamond casino heist in real time while playing the game.
-
-
+Automatically get a GUI that shows the correct solutions for the fingerprint minigame in the diamond casino heist in real time while playing the game.  
 Some images are needed for the program to function and are downloaded from the other branch (for online hosting of the images) at the start of each run (for now).
 
 # Youtube Demonstration 
@@ -9,18 +7,18 @@ https://youtu.be/yDUvMIx5AnU
 
 # How to run?
 1- Download & install python 3.7 from (https://www.python.org/ftp/python/3.7.9/python-3.7.9-amd64.exe)  
-	Make sure you check "Add Python to path" option before begining installation!  
+    Make sure you check "Add Python to path" option before begining installation!  
 2- Open CMD  
 3- Download the required libraries by typing these lines:  
-	1- pip install pyautogui  
-	2- pip install pywin32  
-	3- pip install requests  
-	4- pip install pyqt5  
-	5- pip install numpy==1.19.3  	
-	6- pip install opencv-python  
-	7- Download Pyhook from (https://download.lfd.uci.edu/pythonlibs/z4tqcw5k/pyHook-1.5.1-cp37-cp37m-win_amd64.whl)  
-	- Note it's location when downloading and change the (ENTER YOUR USER HERE) with your location  
-	8- pip install C:\Users\(ENTER YOUR USER HERE)\Downloads\pyHook-1.5.1-cp37-cp37m-win_amd64.whl  
+    1- pip install pyautogui  
+    2- pip install pywin32  
+    3- pip install requests  
+    4- pip install pyqt5  
+    5- pip install numpy==1.19.3  	
+    6- pip install opencv-python  
+    7- Download Pyhook from (https://download.lfd.uci.edu/pythonlibs/z4tqcw5k/pyHook-1.5.1-cp37-cp37m-win_amd64.whl)  
+    - Note it's location when downloading and change the (ENTER YOUR USER HERE) with your location  
+    8- pip install C:\Users\(ENTER YOUR USER HERE)\Downloads\pyHook-1.5.1-cp37-cp37m-win_amd64.whl  
   
 4- Download the code from github (https://codeload.github.com/HazemMohamed98/GTA-Online-Fingerprint/zip/master)  
 5- Right click GTA.py and select Open with -> Choose another app -> More apps -> Look for another app on this PC  
