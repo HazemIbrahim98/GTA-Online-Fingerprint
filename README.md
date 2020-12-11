@@ -10,7 +10,7 @@ https://youtu.be/yDUvMIx5AnU
     Make sure you check "Add Python to path" option before begining installation!  
 2- Open CMD  
 3- Download the required libraries by typing these lines:  
-    1- pip install pyautogui  
+:1- pip install pyautogui  
     2- pip install pywin32  
     3- pip install requests  
     4- pip install pyqt5  
