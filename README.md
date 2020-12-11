@@ -7,18 +7,18 @@ https://youtu.be/yDUvMIx5AnU
 
 # How to run?
 1- Download & install python 3.7 from (https://www.python.org/ftp/python/3.7.9/python-3.7.9-amd64.exe)  
-    Make sure you check "Add Python to path" option before begining installation!  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Make sure you check "Add Python to path" option before begining installation!  
 2- Open CMD  
 3- Download the required libraries by typing these lines:  
-:1- pip install pyautogui  
-    2- pip install pywin32  
-    3- pip install requests  
-    4- pip install pyqt5  
-    5- pip install numpy==1.19.3  	
-    6- pip install opencv-python  
-    7- Download Pyhook from (https://download.lfd.uci.edu/pythonlibs/z4tqcw5k/pyHook-1.5.1-cp37-cp37m-win_amd64.whl)  
-    - Note it's location when downloading and change the (ENTER YOUR USER HERE) with your location  
-    8- pip install C:\Users\(ENTER YOUR USER HERE)\Downloads\pyHook-1.5.1-cp37-cp37m-win_amd64.whl  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1- pip install pyautogui  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2- pip install pywin32  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3- pip install requests  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4- pip install pyqt5  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5- pip install numpy==1.19.3  	
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6- pip install opencv-python  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7- Download Pyhook from (https://download.lfd.uci.edu/pythonlibs/z4tqcw5k/pyHook-1.5.1-cp37-cp37m-win_amd64.whl)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Note it's location when downloading and change the (ENTER YOUR USER HERE) with your location  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8- pip install C:\Users\(ENTER YOUR USER HERE)\Downloads\pyHook-1.5.1-cp37-cp37m-win_amd64.whl  
   
 4- Download the code from github (https://codeload.github.com/HazemMohamed98/GTA-Online-Fingerprint/zip/master)  
 5- Right click GTA.py and select Open with -> Choose another app -> More apps -> Look for another app on this PC  
