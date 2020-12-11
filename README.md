@@ -14,7 +14,7 @@ https://youtu.be/yDUvMIx5AnU
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2- pip install pywin32  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3- pip install requests  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4- pip install pyqt5  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5- pip install numpy==1.19.3  	
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5- pip install numpy==1.19.3  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6- pip install opencv-python  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7- Download Pyhook from (https://download.lfd.uci.edu/pythonlibs/z4tqcw5k/pyHook-1.5.1-cp37-cp37m-win_amd64.whl)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Note it's location when downloading and change the (ENTER YOUR USER HERE) with your location  
