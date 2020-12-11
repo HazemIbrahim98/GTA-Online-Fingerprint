@@ -8,10 +8,10 @@ Some images are needed for the program to function and are downloaded from the o
 https://youtu.be/yDUvMIx5AnU
 
 # How to run?
-1- Download & install python 3.7 from (https://www.python.org/ftp/python/3.7.9/python-3.7.9-amd64.exe)
-	Make sure you check "Add Python to path" option before begining installation!
-2- Open CMD
-3- Download the required libraries by typing these lines:
+1- Download & install python 3.7 from (https://www.python.org/ftp/python/3.7.9/python-3.7.9-amd64.exe)  
+	Make sure you check "Add Python to path" option before begining installation!  
+2- Open CMD  
+3- Download the required libraries by typing these lines:  
 	1- pip install pyautogui
 	2- pip install pywin32
 	3- pip install requests
